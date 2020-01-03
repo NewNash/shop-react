@@ -1,0 +1,12 @@
+.category-container{
+    width: 100%;
+}
+.category-box{
+    width: 1200px;
+    margin: 0 auto;
+}
+.leftbar-container{
+    width: 250px;
+    float: left;
+    border: 1px solid #333333;
+}

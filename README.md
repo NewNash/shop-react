@@ -1,3 +1,5 @@
+# `react` 实现的商城前端
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
