@@ -35,7 +35,6 @@ import { withRouter } from "react-router-dom";
                         currentcate.subcate.map((item,index)=>{return(
                         <div key={index}>
                             {item.name}
-
                         </div>
                     )}):''
                     }

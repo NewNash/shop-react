@@ -3,6 +3,7 @@ import About from "../views/about";
 import About1 from "../views/about1";
 import Notfound from "../views/notfound";
 import Category from "../views/category";
+import My2048 from '../components/2048'
 const routers = [
     {
         path: '/',
@@ -18,6 +19,10 @@ const routers = [
         path:['/c/:category','/c/:category/:subcate','/c/:category/:subcate/:name'],
         component:Category,
         exact: true
+    },
+    {
+      path:'/2048',
+      component:My2048
     },
     // {
     //     path:'/c/:category/:name',

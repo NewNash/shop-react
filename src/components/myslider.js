@@ -1,7 +1,7 @@
 import React from "react";
 import {Carousel, Icon} from 'antd';
-
-export default class Myslider extends React.Component {
+import {connect } from 'react-redux'
+class Myslider extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -29,7 +29,7 @@ export default class Myslider extends React.Component {
     handlemouseout() {this.setState({showarrow: false})}
 
     changeIndex(index) {
-        const length = this.state.imgurl.length
+        const length = this.props.sliderImgs.length
         if (index < 0) {
             index = length-1;
             this.slider.prev();
@@ -43,11 +43,11 @@ export default class Myslider extends React.Component {
         this.setState({currentIndex: index})
     }
     componentDidMount() {
-        console.log(this.props)
+        this.props.dispatch({type:'sliderImg'})
     }
 
     render() {
-        const imgurls = this.state.imgurl||[]
+        const imgurls = this.props.sliderImgs||[]
         return (
             <div className='slider-container'>
                 <div className="slider-box" onMouseOver={this.handlemouseover} onMouseOut={this.handlemouseout}>
@@ -86,3 +86,15 @@ export default class Myslider extends React.Component {
         )
     }
 }
+
+const mapstatetoprops=(state)=>{
+    return{
+        sliderImgs:state.categoryreducer.sliderImgs
+    }
+}
+const mapdispatchtoprops=(dispatch)=>{
+    return{
+        dispatch
+    }
+}
+export default connect(mapstatetoprops,mapdispatchtoprops)(Myslider)

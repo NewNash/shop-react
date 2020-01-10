@@ -3,7 +3,7 @@ import {Icon} from "antd";
 import {Link} from "react-router-dom";
 import logo from '../img/logo.png'
 import {connect} from 'react-redux'
- class Mynav extends React.Component {
+class Mynav extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -92,27 +92,13 @@ import {connect} from 'react-redux'
         }
     }
     handleover(index) {
-        // this.state.category.find((item)=>item.name===list.name)
-        // const arr = [...this.state.category]
-        // arr[index].show = true
-        // this.setState({
-        //     category: arr
-        // })
         this.props.dispatch({type:'showcategory',index})
     }
-
     hanldeleave(index) {
-        // const arr = [...this.state.category]
-        // arr[index].show = false
-        // this.setState({
-        //     category: arr
-        // })
-
         this.props.dispatch({type:'hidecategory',index})
     }
      componentDidMount() {
-         console.log(this.props)
-        this.props.dispatch({type:'category'})
+        this.props.dispatch({type:'categoryname'})
     }
 
     render() {

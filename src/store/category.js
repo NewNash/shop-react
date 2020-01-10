@@ -1,7 +1,8 @@
 const initstate= {
     category:[],
-    currentcategory:'',
-    currentsubcate:''
+    sliderImgs:[],
+    banner1Imgs:[],
+    banner2Imgs:[]
 }
 let reducer = (state = initstate, action) => {
     switch (action.type) {
@@ -15,6 +16,8 @@ let reducer = (state = initstate, action) => {
             let arr1 = [...state.category];
             arr1[action.index].show = false;
             return {...state,category:arr1}
+        case 'sliderImgUrls':
+            return {...state,sliderImgs: action.data}
         default :
             return state
     }
