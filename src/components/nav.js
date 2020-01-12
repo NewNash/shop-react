@@ -1,7 +1,7 @@
 import React from "react";
 import {Icon} from "antd";
 import {Link} from "react-router-dom";
-import logo from '../img/logo.png'
+// import logo from '../img/logo.png'
 import {connect} from 'react-redux'
 class Mynav extends React.Component {
     constructor(props) {
@@ -108,7 +108,7 @@ class Mynav extends React.Component {
             <div className='navcontainer'>
                 <div className="navbox">
                     <div className="logobox">
-                        <Link to="/" className='logo'><img src={logo} alt=""/></Link>
+                        <Link to="/" className='logo'><img  alt=""/></Link>
                         <div className="searchbox">
                             <input type="text" placeholder='Product Keywords'/>
                             <Icon type="search" className='searchicon'/>
